@@ -12,7 +12,7 @@ var min_bpm = 40;
 var max_bpm = 240;
 var running = true;
 
-// Display setup
+// Display
 display.setTextSize(5);
 var white = display.color(255, 255, 255);
 var black = display.color(0, 0, 0);
@@ -36,7 +36,7 @@ while (running) {
   if (current_time >= next_beat) {
     audio.tone(tone_frequency, tone_duration, true);
     
-    // Optional visual flash 
+    // Optional flash 
     display.fill(display.color(80, 80, 0)); 
     display.drawText(bpm.toString(), width / 2, height / 2);
     delay(40); 
@@ -64,7 +64,6 @@ while (running) {
   delay(20);
 }
 
-// Clean exit
 display.fill(black);
 display.setTextSize(3);
 display.drawText("Exited", width / 2, height / 2);
